@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muthulakshmi M | Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
+:root{--bg:#050816;--card:rgba(255,255,255,.08);--text:#fff;--muted:#cbd5e1;--primary:#a855f7;--secondary:#38bdf8}
+body.light{--bg:#f5f7ff;--card:rgba(255,255,255,.82);--text:#111827;--muted:#374151;--primary:#7c3aed;--secondary:#0284c7}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,#8b5cf6,transparent 30%),radial-gradient(circle at 80% 10%,#0ea5e9,transparent 25%),radial-gradient(circle at 50% 90%,#ec4899,transparent 25%);opacity:.35;z-index:-2}
+nav{position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;backdrop-filter:blur(18px);background:rgba(5,8,22,.76);border-bottom:1px solid rgba(255,255,255,.12)}
+.logo{font-size:25px;font-weight:800;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;color:transparent}
+.nav-links a{color:white;text-decoration:none;margin-left:22px;font-size:15px}
+.nav-links a:hover{color:var(--secondary)}
+.menu-btn,.theme-btn{background:var(--card);color:white;border:1px solid rgba(255,255,255,.18);border-radius:50%;width:42px;height:42px;cursor:pointer;margin-left:10px}
+.menu-btn{display:none}
+.hero{min-height:90vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:40px;padding:70px 8%}
+.tag{display:inline-block;padding:10px 18px;border-radius:30px;background:var(--card);border:1px solid rgba(255,255,255,.15);color:#93c5fd;margin-bottom:18px}
+.hero h1{font-size:60px;line-height:1.1;margin-bottom:15px}
+.gradient{background:linear-gradient(90deg,#c084fc,#38bdf8,#f472b6);-webkit-background-clip:text;color:transparent}
+.typing{font-size:24px;color:var(--secondary);min-height:35px;margin-bottom:15px}
+.hero p{color:var(--muted);max-width:650px;font-size:18px;line-height:1.8}
+.buttons{margin-top:30px;display:flex;gap:15px;flex-wrap:wrap}
+.btn{padding:14px 22px;border-radius:35px;color:white;text-decoration:none;background:linear-gradient(90deg,#7c3aed,#0284c7);box-shadow:0 0 25px rgba(56,189,248,.35);transition:.3s;border:none;cursor:pointer;font-weight:700}
+.btn:hover{transform:translateY(-5px)}
+.btn.secondary{background:var(--card);border:1px solid rgba(255,255,255,.15)}
+.photo-card{padding:22px;border-radius:35px;background:var(--card);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(18px);animation:float 4s ease-in-out infinite}
+.photo-card img{width:100%;height:430px;object-fit:cover;border-radius:28px;border:2px solid rgba(255,255,255,.15)}
+.photo-note{text-align:center;color:var(--muted);margin-top:14px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+section{padding:70px 8%}
+.section-title{text-align:center;font-size:38px;margin-bottom:45px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.glass{background:var(--card);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(18px);border-radius:25px;padding:28px;transition:.35s}
+.glass:hover{transform:translateY(-8px);box-shadow:0 0 35px rgba(56,189,248,.25)}
+.glass h3{color:var(--secondary);margin-bottom:12px}
+.glass p{color:var(--muted);line-height:1.7}
+.skill-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.skill-tags span{padding:8px 13px;border-radius:20px;background:rgba(56,189,248,.14);color:#bae6fd;font-size:14px}
+.filter-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.filter-buttons button{padding:10px 18px;border-radius:30px;border:1px solid rgba(255,255,255,.2);background:var(--card);color:var(--text);cursor:pointer}
+.filter-buttons button.active{background:linear-gradient(90deg,#7c3aed,#0284c7);color:white}
+.project-card i{font-size:34px;color:var(--primary);margin-bottom:15px}
+.tech{color:#93c5fd;font-size:14px;margin-top:15px}
+.timeline{display:grid;gap:22px}
+.timeline .glass{border-left:4px solid var(--primary)}
+.contact-box{max-width:750px;margin:auto;text-align:center}
+.contact-icons{margin-top:24px;display:flex;justify-content:center;flex-wrap:wrap;gap:18px}
+.contact-icons a{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);color:white;display:grid;place-items:center;font-size:22px;text-decoration:none;transition:.3s}
+.contact-icons a:hover{background:#7c3aed;transform:translateY(-6px)}
+form{margin-top:25px;display:grid;gap:15px}
+input,textarea{padding:14px;border-radius:15px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:var(--text);outline:none}
+textarea{min-height:120px;resize:none}
+footer{text-align:center;padding:25px;color:var(--muted);border-top:1px solid rgba(255,255,255,.1)}
+.reveal{opacity:0;transform:translateY(50px);transition:.8s}
+.reveal.active{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+.hero,.grid-3{grid-template-columns:1fr}
+.hero h1{font-size:42px}
+.photo-card img{height:340px}
+.menu-btn{display:inline-block}
+.nav-links{display:none;position:absolute;top:75px;right:8%;background:rgba(5,8,22,.95);padding:20px;border-radius:20px;width:220px}
+.nav-links.show{display:block}
+.nav-links a{display:block;margin:16px 0}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Muthulakshmi</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div>
+    <button class="theme-btn" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+    <button class="menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <span class="tag">AI & Data Science Student</span>
+    <h1>Hi, I'm <span class="gradient">Muthulakshmi M</span></h1>
+    <div class="typing" id="typing"></div>
+    <p>
+      I build AI, machine learning, data analytics, full stack, cyber security,
+      and UI/UX based projects that solve real-world problems with intelligent systems.
+    </p>
+
+    <div class="buttons">
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+      <a href="Resume.pdf" class="btn secondary" download>Download Resume</a>
+      <a href="https://github.com/Sheeja200" target="_blank" class="btn secondary">GitHub</a>
+      <a href="https://www.linkedin.com/in/muthulakshmi-muthurathinam-81092b2a2/" target="_blank" class="btn secondary">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="photo-card">
+    <img src="myphoto.jpeg" alt="Muthulakshmi M">
+    <p class="photo-note">Muthulakshmi M</p>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <h2 class="section-title gradient">About Me</h2>
+  <div class="grid-3">
+    <div class="glass">
+      <h3>Education</h3>
+      <p>B.Tech in Artificial Intelligence and Data Science at Rajalakshmi Engineering College.</p>
+    </div>
+    <div class="glass">
+      <h3>Academic Info</h3>
+      <p>CGPA: 8.09 | Current Semester: 6</p>
+    </div>
+    <div class="glass">
+      <h3>Interests</h3>
+      <p>AI, Machine Learning, Data Analytics, Full Stack Development, UI/UX, Cyber Security, RAG, and Space AI.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <h2 class="section-title gradient">Skills</h2>
+  <div class="grid-3">
+    <div class="glass"><h3>Programming</h3><div class="skill-tags"><span>Python</span><span>SQL</span><span>Java</span><span>C</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>R</span></div></div>
+    <div class="glass"><h3>AI & ML</h3><div class="skill-tags"><span>TensorFlow</span><span>Scikit-Learn</span><span>CNN</span><span>NLP</span><span>Deep Learning</span><span>Grad-CAM</span></div></div>
+    <div class="glass"><h3>Data Analytics</h3><div class="skill-tags"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Power BI</span><span>Tableau</span><span>Excel</span></div></div>
+    <div class="glass"><h3>Web Development</h3><div class="skill-tags"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>Flask</span><span>REST APIs</span></div></div>
+    <div class="glass"><h3>Databases</h3><div class="skill-tags"><span>MySQL</span><span>MongoDB</span><span>PostgreSQL</span><span>SQLite</span><span>Snowflake</span></div></div>
+    <div class="glass"><h3>Tools</h3><div class="skill-tags"><span>GitHub</span><span>VS Code</span><span>Jupyter</span><span>Figma</span><span>Postman</span></div></div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <h2 class="section-title gradient">Featured Projects</h2>
+
+  <div class="filter-buttons">
+    <button class="active" onclick="filterProjects('all',this)">All</button>
+    <button onclick="filterProjects('ai',this)">AI</button>
+    <button onclick="filterProjects('analytics',this)">Analytics</button>
+    <button onclick="filterProjects('fullstack',this)">Full Stack</button>
+    <button onclick="filterProjects('security',this)">Security</button>
+  </div>
+
+  <div class="grid-3">
+    <div class="glass project-card project ai">
+      <i class="fa-solid fa-money-bill-wave"></i>
+      <h3>AI-Based Currency Detection System</h3>
+      <p>Deep learning-based Indian currency recognition system with camera capture, image upload, prediction, and voice support.</p>
+      <div class="tech">TensorFlow • MobileNetV2 • Flask</div>
+    </div>
+
+    <div class="glass project-card project analytics">
+      <i class="fa-solid fa-globe"></i>
+      <h3>Global Energy & Nuclear Safety Analytics</h3>
+      <p>Analyzed energy, power plant, fuel, carbon emission, and Chernobyl radiation datasets with dashboards.</p>
+      <div class="tech">Python • Pandas • Tableau • Power BI</div>
+    </div>
+
+    <div class="glass project-card project fullstack ai">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h3>S.C.O.P.E.S Price Comparison</h3>
+      <p>AI smart price comparison system with product matching, deal score, price prediction, and cache-first architecture.</p>
+      <div class="tech">React • Node • MongoDB • Flask • ML</div>
+    </div>
+
+    <div class="glass project-card project security">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3>MGM Resort Security System</h3>
+      <p>Cyber security platform with role-based authentication, password hashing, honeypot simulation, and alerts.</p>
+      <div class="tech">Python • Flask • MongoDB • Security</div>
+    </div>
+
+    <div class="glass project-card project ai">
+      <i class="fa-solid fa-lungs"></i>
+      <h3>Lung Cancer Detection</h3>
+      <p>CNN medical image classification system with Grad-CAM explainability and 94.6% accuracy.</p>
+      <div class="tech">CNN • TensorFlow • Keras • Grad-CAM</div>
+    </div>
+
+    <div class="glass project-card project ai fullstack">
+      <i class="fa-solid fa-rocket"></i>
+      <h3>AstroGeo AI Chatbot</h3>
+      <p>AI chatbot for geography and space exploration using semantic search and FAISS retrieval.</p>
+      <div class="tech">React • Flask • FAISS • NLP</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <h2 class="section-title gradient">Experience</h2>
+  <div class="timeline">
+    <div class="glass"><h3>Artificial Intelligence Intern</h3><p>Applied AI techniques for model development and problem-solving tasks.</p></div>
+    <div class="glass"><h3>Full Stack Development Intern</h3><p>Built and optimized web applications using front-end and back-end technologies.</p></div>
+    <div class="glass"><h3>UI/UX Design Intern</h3><p>Designed user-friendly interfaces using wireframes and prototypes.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title gradient">Certifications</h2>
+  <div class="grid-3">
+    <div class="glass">SnowPro Associate</div>
+    <div class="glass">Introduction to Tableau</div>
+    <div class="glass">Azure DevOps</div>
+    <div class="glass">Machine Learning</div>
+    <div class="glass">R for Data Science</div>
+    <div class="glass">Programming Using Java</div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <h2 class="section-title gradient">Contact Me</h2>
+
+  <div class="glass contact-box">
+    <p>Email: muthulakshmimuthurathinam@gmail.com</p>
+    <p>Phone: +91 8838506192</p>
+
+    <div class="contact-icons">
+      <a href="mailto:muthulakshmimuthurathinam@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/muthulakshmi-muthurathinam-81092b2a2/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/Sheeja200" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://leetcode.com/u/Muthulakshmi_0512/" target="_blank"><i class="fa-solid fa-code"></i></a>
+    </div>
+
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Muthulakshmi M | AI & Data Science Portfolio
+</footer>
+
+<script>
+const roles=[
+  "AI & Data Science Student",
+  "Machine Learning Enthusiast",
+  "Data Analytics Learner",
+  "Full Stack Developer",
+  "UI/UX Design Intern",
+  "Cyber Security Project Builder"
+];
+
+let roleIndex=0;
+let charIndex=0;
+const typing=document.getElementById("typing");
+
+function typeText(){
+  if(charIndex<roles[roleIndex].length){
+    typing.innerHTML+=roles[roleIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeText,80);
+  }else{
+    setTimeout(eraseText,1300);
+  }
+}
+
+function eraseText(){
+  if(charIndex>0){
+    typing.innerHTML=roles[roleIndex].substring(0,charIndex-1);
+    charIndex--;
+    setTimeout(eraseText,45);
+  }else{
+    roleIndex=(roleIndex+1)%roles.length;
+    setTimeout(typeText,300);
+  }
+}
+
+typeText();
+
+const reveals=document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+  reveals.forEach(section=>{
+    const top=section.getBoundingClientRect().top;
+    if(top<window.innerHeight-120){
+      section.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+function filterProjects(category,btn){
+  const projects=document.querySelectorAll(".project");
+  const buttons=document.querySelectorAll(".filter-buttons button");
+
+  buttons.forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+
+  projects.forEach(project=>{
+    if(category==="all" || project.classList.contains(category)){
+      project.style.display="block";
+    }else{
+      project.style.display="none";
+    }
+  });
+}
+
+function sendMessage(event){
+  event.preventDefault();
+  const name=document.getElementById("name").value;
+  alert("Thank you, "+name+"! Your message is ready. This is a static portfolio, so connect Formspree later for real email sending.");
+  event.target.reset();
+}
+</script>
+
+</body>
+</html>
